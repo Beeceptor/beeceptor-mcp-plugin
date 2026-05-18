@@ -1,0 +1,13 @@
+{
+  "name": "beeceptor",
+  "displayName": "Beeceptor",
+  "version": "1.0.0",
+  "description": "API mocking and testing with Beeceptor — create mock endpoints, manage rules, inspect traffic, and run chaos tests right from Cursor.",
+  "author": {
+    "name": "Beeceptor",
+    "email": "support@beeceptor.com"
+  },
+  "license": "MIT",
+  "keywords": ["api", "mock", "testing", "beeceptor", "mcp", "http", "rest", "stub", "proxy", "chaos"],
+  "logo": "assets/logo.svg"
+}

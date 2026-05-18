@@ -1,0 +1,22 @@
+---
+description: Best practices for using Beeceptor MCP tools to mock, test, and inspect APIs
+alwaysApply: false
+globs:
+  - "**/*.json"
+  - "**/*.yaml"
+  - "**/*.yml"
+---
+
+beeceptor-usage:
+
+- Before creating or editing rules, always call `rule_list` to inspect the current state of the endpoint.
+- Prefer faker/dynamic data in mock response bodies (`templated: true`) over hardcoded static values. Use `{{faker 'person.firstName'}}`, `{{faker 'string.uuid'}}`, `{{body 'fieldName'}}`, etc.
+- Response headers must always be static literal strings — Handlebars templating does not apply to headers.
+- Use `rule_reorder` to fix priority conflicts. Rules are evaluated top-to-bottom; the first match wins.
+- When deleting rules, always back up the full rule set first by calling `rule_list` and saving the output before proceeding.
+- Use `rule_create_crud` for resource endpoints that need full GET/POST/PUT/DELETE lifecycle; it is faster than defining four separate rules.
+- Use `rule_create_weighted` to simulate error rates and chaos scenarios (e.g. 80% success, 20% 503).
+- Use `request_history_list` and `request_history_get` to debug unexpected traffic or verify integration behavior.
+- Use `state_upsert` and `state_get` to build stateful mock flows (e.g. login → session → protected resource).
+- Use `endpoint_info` to retrieve the mock base URL before sharing it with teammates or embedding it in tests.
+- Use `syntax_info` when you need Handlebars helper or Faker namespace references; do not guess template syntax.
