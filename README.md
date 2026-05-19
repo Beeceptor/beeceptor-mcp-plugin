@@ -3,8 +3,8 @@
 Mock, intercept, and test HTTP APIs without leaving Cursor.
 
 The Beeceptor plugin connects Cursor to your [Beeceptor](https://beeceptor.com)
-account via MCP, giving AI agents direct access to create mock rules, inspect
-traffic, run chaos tests, and manage stateful API simulations.
+account via MCP, giving AI agents direct access to create and manage mock rules,
+inspect traffic, run chaos tests, and build stateful API simulations.
 
 ---
 
@@ -14,7 +14,7 @@ traffic, run chaos tests, and manage stateful API simulations.
 |-----------|------|---------|
 | MCP server | `mcp.json` | Connects Cursor to the Beeceptor MCP API |
 | Rule | `rules/beeceptor-usage.mdc` | Best-practice guidance applied when working with Beeceptor tools |
-| Skill | `skills/mock-api-designer/` | Design and scaffold mock APIs from a description or spec |
+| Skill | `skills/mock-api-designer/` | Design and scaffold mock APIs from a description or route list |
 | Skill | `skills/request-inspector/` | Inspect and debug captured request history |
 | Agent | `agents/api-mock-setup.md` | End-to-end agent that sets up a complete mock from scratch |
 | Agent | `agents/chaos-tester.md` | Configures weighted error rates and latency injection for resilience testing |
@@ -25,41 +25,25 @@ traffic, run chaos tests, and manage stateful API simulations.
 
 ## Setup
 
-### 1. Get your Beeceptor API key
+### 1. Install the plugin
 
-Log in at [beeceptor.com](https://beeceptor.com), go to **Account → API Keys**,
-and copy your key.
-
-### 2. Set the environment variable
-
-Add the following to your shell profile (`.zshrc`, `.bashrc`, etc.) or to your
-Cursor environment:
-
-```bash
-export BEECEPTOR_API_KEY=your_api_key_here
-```
-
-### 3. Install the plugin
-
-Install this plugin from the
-[Cursor Marketplace](https://cursor.com/marketplace) or add the MCP config
-manually to your Cursor settings:
+Install from the [Cursor Marketplace](https://cursor.com/marketplace), or add the
+MCP server manually in Cursor settings:
 
 ```json
 {
   "mcpServers": {
     "beeceptor": {
-      "url": "https://mcp.beeceptor.com/mcp",
-      "headers": {
-        "Authorization": "Bearer YOUR_API_KEY"
-      }
+      "url": "https://mcp.beeceptor.com/mcp"
     }
   }
 }
 ```
 
-> **Sandbox users:** replace the URL with `https://mcp.beeceptor.tech/mcp`.
+### 2. Sign in with OAuth
 
+When you first use the plugin, Cursor prompts you to connect your Beeceptor
+account. Complete the OAuth flow.
 ---
 
 ## Available MCP tools

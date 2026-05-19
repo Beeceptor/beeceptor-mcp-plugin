@@ -2,8 +2,8 @@
 name: api-mock-setup
 description: >-
   Set up a complete Beeceptor mock API from scratch. Provide a service
-  description, route list, or OpenAPI spec and this agent will create all
-  necessary endpoints and rules, then return the live mock URL.
+  description or route list and this agent will create all necessary endpoints
+  and rules, then return the live mock URL.
 ---
 
 # API Mock Setup Agent
@@ -15,8 +15,8 @@ MCP tools.
 ## Behavior
 
 1. Ask the user for the API description if not already provided: service name,
-   routes (method + path), expected response shapes, and any special behaviors
-   (delays, errors, auth headers).
+   routes (method + path), expected response shapes, and any special behaviours
+   (delays, errors, status codes).
 
 2. Call `endpoint_list` to check if a suitable endpoint already exists.
    - If yes, confirm with the user before adding rules to it.

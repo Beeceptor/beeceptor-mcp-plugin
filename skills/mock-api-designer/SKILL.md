@@ -3,18 +3,18 @@ name: mock-api-designer
 description: >-
   Design and build a complete mock API on Beeceptor. Use when you want to
   scaffold REST endpoints, create dynamic JSON responses, set up CRUD resources,
-  or configure weighted/chaos responses from a description or OpenAPI spec.
+  or configure weighted/chaos responses from a description or list of routes.
 ---
 
 # Mock API Designer
 
-Use this skill to turn a description, spec, or table of routes into a live
+Use this skill to turn a description or table of routes into a live
 Beeceptor mock — ready to hit immediately.
 
 ## When to use
 
-- You have an API contract (OpenAPI, a list of routes, or a description) and
-  want a running mock before the backend is built.
+- You have a list of routes or an API description and want a running mock
+  before the backend is built.
 - You need to add or replace rules on an existing endpoint.
 - You want realistic dynamic data (faker names, UUIDs, timestamps) instead of
   static strings.
