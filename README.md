@@ -107,6 +107,4 @@ targeting the specified routes.
 
 ## Links
 
-- [Beeceptor documentation](https://beeceptor.com/docs/)
-- [Beeceptor MCP server on GitHub](https://github.com/beeceptor/beeceptor-mcp)
-- [Cursor Marketplace](https://cursor.com/marketplace)
+- [Beeceptor documentation](https://beeceptor.com/docs/mcp-agentic-mode/)
